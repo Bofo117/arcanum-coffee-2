@@ -98,9 +98,10 @@ export default function Navbar() {
               </a>
             ))}
             <div className="px-4 pt-2">
-              <button className="btn-primary w-full">
-                Reservar
-              </button>
+                <button className="bg-[#7A4A2A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#5C3820] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Reservar
+                </button>
+
             </div>
           </motion.div>
         )}

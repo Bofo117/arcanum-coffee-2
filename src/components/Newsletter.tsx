@@ -73,7 +73,7 @@ export default function Newsletter() {
               />
               <motion.button
                 type="submit"
-                className="btn-accent whitespace-nowrap"
+                className="bg-[#B75D4D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9A4E40] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 disabled={loading}

@@ -102,7 +102,7 @@ export default function AdminDashboard() {
 
             <motion.button
               type="submit"
-              className="btn-primary w-full"
+              className="bg-[#7A4A2A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#5C3820] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -128,14 +128,14 @@ export default function AdminDashboard() {
             <div className="flex gap-4">
               <button
                 onClick={loadData}
-                className="btn-primary text-sm"
+                className="bg-[#7A4A2A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#5C3820] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
                 disabled={loading}
               >
                 {loading ? 'Cargando...' : '🔄 Actualizar'}
               </button>
               <button
                 onClick={() => setIsAuthenticated(false)}
-                className="btn-accent text-sm"
+                className="bg-[#B75D4D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9A4E40] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
               >
                 🚪 Salir
               </button>

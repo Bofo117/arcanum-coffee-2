@@ -59,7 +59,7 @@ export default function Hero() {
           >
             <motion.a
               href="#menu"
-              className="btn-accent text-lg px-8 py-4"
+              className="bg-[#B75D4D] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#9A4E40] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
