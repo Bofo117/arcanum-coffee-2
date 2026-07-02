@@ -1,8 +1,7 @@
 // src/components/Menu.tsx
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion'; // Quitamos useRef sin usar
 import { useRef } from 'react';
 
 const menuItems = [
@@ -53,8 +52,6 @@ const menuItems = [
 export default function Menu() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const categories = [...new Set(menuItems.map(item => item.category))];
 
   return (
     <section id="menu" className="py-20 bg-cream">

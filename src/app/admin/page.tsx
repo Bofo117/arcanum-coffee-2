@@ -1,7 +1,7 @@
 // src/app/admin/page.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react'; // Quitamos useEffect
 import { motion } from 'framer-motion';
 import { createClient } from '@/lib/supabase/client';
 
@@ -25,7 +25,7 @@ export default function AdminDashboard() {
   const [error, setError] = useState('');
   const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
   const [contacts, setContacts] = useState<Contact[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Cambiamos a false inicial
   const [activeTab, setActiveTab] = useState<'newsletter' | 'contacts'>('newsletter');
 
   const handleLogin = (e: React.FormEvent) => {
