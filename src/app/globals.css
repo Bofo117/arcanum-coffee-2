@@ -3,13 +3,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+  :root {
+    --background: #FDF0E8;
+    --foreground: #4E3B3B;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold
+           hover:bg-primary-dark transition-all duration-300
+           transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold
+           hover:bg-accent-dark transition-all duration-300
+           transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-serif font-bold text-primary mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-dark-light mb-8 max-w-2xl mx-auto;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-dark-light/20
+           focus:outline-none focus:ring-2 focus:ring-accent
+           bg-white text-dark placeholder-dark-light/50
+           transition-all duration-300;
+  }
 }
