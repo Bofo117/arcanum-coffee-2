@@ -2,9 +2,8 @@
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 export default async function Home() {
-  // Prueba simple de conexión
   const supabase = createServerSupabaseClient()
-  const { data, error } = await supabase.from('newsletter_subscribers').select('count')
+  const { error } = await supabase.from('newsletter_subscribers').select('count', { count: 'exact', head: true })
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
