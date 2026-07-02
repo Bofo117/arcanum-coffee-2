@@ -1,8 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ClientLayout from "@/components/ClientLayout";
 import { Toaster } from 'react-hot-toast';
 import "./globals.css";
 
@@ -31,11 +30,9 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <Toaster position="top-center" />
-        <Navbar />
-        <main className="min-h-screen">
+        <ClientLayout>
           {children}
-        </main>
-        <Footer />
+        </ClientLayout>
       </body>
     </html>
   );
