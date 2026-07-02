@@ -1,13 +1,25 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Toaster } from 'react-hot-toast';
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: '--font-inter',
+});
+
+const playfair = Playfair_Display({ 
+  subsets: ["latin"],
+  variable: '--font-playfair',
+});
 
 export const metadata: Metadata = {
-  title: "Arcanum Coffee - Café de Especialidad",
-  description: "Descubre la magia del café de especialidad en Arcanum Coffee",
+  title: "Arcanum Coffee | Café de Especialidad",
+  description: "Descubre la magia del café de especialidad en Arcanum Coffee. Granos seleccionados, tostado artesanal y experiencias únicas.",
+  keywords: "café, especialidad, arcanum, coffee, café artesanal, barista",
 };
 
 export default function RootLayout({
@@ -17,7 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+        <Toaster position="top-center" />
+        <Navbar />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
