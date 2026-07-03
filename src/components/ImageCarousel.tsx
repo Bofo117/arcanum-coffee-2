@@ -43,7 +43,6 @@ const POSITIONS = ['center', 'left-close', 'right-close', 'left-far', 'right-far
 
 export default function ImageCarousel() {
   const [centerIndex, setCenterIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 = izquierda, 1 = derecha, 0 = inicial
 
   const totalSlides = carouselImages.length;
 
@@ -54,24 +53,16 @@ export default function ImageCarousel() {
   }, [centerIndex, totalSlides]);
 
   const goTo = useCallback((index: number) => {
-    const diff = index - centerIndex;
-    if (diff > 0) {
-      setDirection(1);
-    } else if (diff < 0) {
-      setDirection(-1);
-    }
-    setCenterIndex(index);
-  }, [centerIndex]);
+  setCenterIndex(index);
+}, []);
 
-  const next = useCallback(() => {
-    setDirection(1);
-    setCenterIndex((prev) => (prev + 1) % totalSlides);
-  }, [totalSlides]);
+const next = useCallback(() => {
+  setCenterIndex((prev) => (prev + 1) % totalSlides);
+}, [totalSlides]);
 
-  const prev = useCallback(() => {
-    setDirection(-1);
-    setCenterIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  }, [totalSlides]);
+const prev = useCallback(() => {
+  setCenterIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+}, [totalSlides]);
 
   // Teclado
   useEffect(() => {
