@@ -28,7 +28,7 @@ export default function AdminPage() {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [activeTab, setActiveTab] = useState<'newsletter' | 'contacts'>('newsletter');
 
-  const ADMIN_PASSWORD = 'ArcanumAdmin2024!';
+  const ADMIN_PASSWORD = 'hola';
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
