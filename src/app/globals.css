@@ -5,8 +5,8 @@
 
 @layer base {
   :root {
-    --background: #FDF0E8;
-    --foreground: #4E3B3B;
+    --background: #F5F1EA;
+    --foreground: #342519;
   }
 
   body {
@@ -16,5 +16,10 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair);
+  }
+}
+@layer utilities {
+  .perspective-1200 {
+    perspective: 1200px;
   }
 }

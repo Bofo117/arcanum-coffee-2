@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,19 +32,26 @@ export default function Navbar() {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-sm shadow-lg' 
-          : 'bg-cream/80 backdrop-blur-sm'
+          : 'bg-[#EDE6D9]/80 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Logo + Nombre */}
           <motion.a
             href="#home"
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-3"
             whileHover={{ scale: 1.05 }}
           >
-            <span className="text-3xl">☕</span>
-            <span className="text-2xl font-serif font-bold text-primary">
+            <Image
+              src="/logo.png"
+              alt="Arcanum Coffee Logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain"
+              priority
+            />
+            <span className="text-2xl font-serif font-bold text-[#342519]">
               Arcanum
             </span>
           </motion.a>
@@ -54,20 +62,23 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-dark hover:text-accent transition-colors duration-300 font-medium"
+                className="text-[#342519] hover:text-[#684F36] transition-colors duration-300 font-medium"
               >
                 {link.label}
               </a>
             ))}
-            <button className="btn-primary">
-              Reservar
-            </button>
+            <a
+                href="/admin"
+                className="bg-[#684F36] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4D3A27] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
+                >
+                Admin
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-dark"
+            className="md:hidden text-[#342519]"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
@@ -91,17 +102,19 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-3 text-dark hover:bg-cream transition-colors"
+                className="block px-4 py-3 text-[#342519] hover:bg-[#EDE6D9] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
             <div className="px-4 pt-2">
-                <button className="bg-[#7A4A2A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#5C3820] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    Reservar
-                </button>
-
+                <a
+                href="/admin"
+                className="bg-[#684F36] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4D3A27] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
+                >
+                Admin
+                </a>
             </div>
           </motion.div>
         )}

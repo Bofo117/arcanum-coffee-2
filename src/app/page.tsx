@@ -1,6 +1,7 @@
 // src/app/page.tsx
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import ImageCarousel from '@/components/ImageCarousel';
 import Menu from '@/components/Menu';
 import Newsletter from '@/components/Newsletter';
 import Contact from '@/components/Contact';
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <ImageCarousel />
       <Menu />
       <Newsletter />
       <Contact />

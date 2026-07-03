@@ -45,7 +45,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-dark to-primary text-white">
+    <section className="py-20 bg-gradient-to-br from-[#342519] to-[#684F36] text-white">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ export default function Newsletter() {
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             Únete a Nuestra Comunidad
           </h2>
-          <p className="text-xl text-cream mb-8">
+          <p className="text-xl text-[#EDE6D9] mb-8">
             Recibe nuestras novedades, eventos especiales y secretos del café directamente en tu email.
           </p>
 
@@ -67,13 +67,12 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@email.com"
-                className="flex-1 px-4 py-3 rounded-lg text-dark bg-white
-                         focus:outline-none focus:ring-2 focus:ring-accent"
+                className="flex-1 px-4 py-3 rounded-lg text-[#342519] bg-white focus:outline-none focus:ring-2 focus:ring-[#B39977]"
                 disabled={loading}
               />
               <motion.button
                 type="submit"
-                className="bg-[#B75D4D] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9A4E40] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
+                className="bg-[#B39977] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#9A7F5F] transition-all duration-300 whitespace-nowrap"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 disabled={loading}
@@ -83,7 +82,7 @@ export default function Newsletter() {
             </div>
           </form>
 
-          <p className="text-sm text-cream/70 mt-4">
+          <p className="text-sm text-[#EDE6D9]/70 mt-4">
             No spam, solo contenido mágico. Puedes darte de baja cuando quieras.
           </p>
         </motion.div>

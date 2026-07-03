@@ -1,8 +1,7 @@
 // src/components/About.tsx
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 export default function About() {
@@ -37,10 +36,10 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#342519] mb-4">
             Nuestra Historia
           </h2>
-          <p className="section-subtitle">
+          <p className="text-lg md:text-xl text-[#B39977] mb-8 max-w-2xl mx-auto">
             Arcanum nació de la pasión por el café de especialidad y el deseo de crear
             un espacio donde cada visita sea una experiencia memorable.
           </p>
@@ -53,13 +52,13 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="text-center p-8 rounded-2xl bg-cream-light hover:shadow-xl transition-shadow duration-300"
+              className="text-center p-8 rounded-2xl bg-[#F5F1EA] hover:shadow-xl transition-shadow duration-300"
             >
               <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-2xl font-serif font-bold text-primary mb-4">
+              <h3 className="text-2xl font-serif font-bold text-[#342519] mb-4">
                 {feature.title}
               </h3>
-              <p className="text-dark-light">
+              <p className="text-[#B39977]">
                 {feature.description}
               </p>
             </motion.div>

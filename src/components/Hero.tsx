@@ -6,10 +6,8 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Fondo con gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-dark to-accent opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#342519] via-[#684F36] to-[#B39977] opacity-90" />
       
-      {/* Patrón decorativo */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 text-6xl">☕</div>
         <div className="absolute top-20 right-20 text-4xl">🫘</div>
@@ -33,7 +31,7 @@ export default function Hero() {
           </motion.h1>
           
           <motion.p 
-            className="text-xl md:text-2xl text-cream mb-8 font-light"
+            className="text-xl md:text-2xl text-[#EDE6D9] mb-8 font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -42,7 +40,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.p 
-            className="text-lg text-cream-dark mb-12 max-w-2xl mx-auto"
+            className="text-lg text-[#D9CFBF] mb-12 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -59,7 +57,7 @@ export default function Hero() {
           >
             <motion.a
               href="#menu"
-              className="bg-[#B75D4D] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#9A4E40] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+              className="bg-[#684F36] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#4D3A27] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -67,8 +65,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold
-                       hover:bg-white/30 transition-all duration-300 border border-white/30 text-lg"
+              className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/30 transition-all duration-300 border border-white/30 text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -78,13 +75,12 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div 
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <svg className="w-8 h-8 text-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-8 h-8 text-[#EDE6D9]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </motion.div>
